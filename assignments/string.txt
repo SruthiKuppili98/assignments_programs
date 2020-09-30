@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp19
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            String str = "HELLO WORLD";
+            int[] freq = new int[str.Length];
+            int i, j;
+
+            char[] string1 = str.ToCharArray();
+
+            for (i = 0; i < str.Length; i++)
+            {
+                freq[i] = 1;
+                for(j = i + 1; j <str.Length; j++)
+                {
+                    if (string1[i] == string1[j])
+                    {
+                        freq[i]++;
+
+
+                        string1[j] = '0';
+
+                    }
+                }
+            }
+
+            Console.WriteLine("Characters and their corresponding frequencie");
+            for (i = 0; i < freq.Length; i++)
+            {
+                if (string1[i] != ' ' && string1[i] != '0')
+                    Console.WriteLine(string1[i] + "-" + freq[i]);
+            }
+               
+        }
+    }
+}

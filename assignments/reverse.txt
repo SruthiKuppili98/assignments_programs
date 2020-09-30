@@ -1,0 +1,21 @@
+namespace reverse_print
+{
+class Program
+{
+static void Main(string[] args)
+{
+int rev = 0, rem;
+Console.WriteLine("enter number");
+int n = Convert.ToInt32(Console.ReadLine());
+
+while (n !=0)
+{
+rem=n % 10;
+rev = rev * 10 + rem;
+n = n / 10;
+}
+
+Console.WriteLine("reverse of a number:{0}",rev);
+Console.ReadKey();
+}
+}

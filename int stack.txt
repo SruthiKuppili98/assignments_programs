@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ConsoleApp22
 {
@@ -35,6 +36,8 @@ namespace ConsoleApp22
 
 
             Console.WriteLine("Peek elements of MyStack are:" + MyStack.Peek());
+            Console.WriteLine(MyStack.Contains(20));
+            Console.WriteLine("Elements present in MyStack:" + MyStack.Count());
             foreach (int stack in MyStack)
             {
 

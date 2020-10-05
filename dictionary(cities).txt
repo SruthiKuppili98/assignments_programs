@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp24
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Dictionary<string, string> dictionary = new Dictionary<string, string>();
+
+            dictionary.Add("bangalore", "sruthi");
+            dictionary.Add("mumbai", "pawan");
+            dictionary.Add("hyderabad", "mahi");
+            dictionary.Add("pune", "aditya");
+            dictionary.Add("noida", "satya");
+            dictionary.Add("trivandapuram", "chandini");
+            dictionary.Add("chennai", "ammu");
+            dictionary.Add("delhi", "pv");
+            dictionary.Add("kolkata", "hani");
+            dictionary.Add("ahemadabad", "saie");
+            foreach (KeyValuePair<string, string> check in dictionary)
+
+            {
+                Console.WriteLine("Elements of dictionary are:" + check.Key + " " + check.Value);
+            }
+            Console.WriteLine("Number of elements present in the dictionary:" + dictionary.Count());
+
+            //get a dictionary item using set and get procedure
+
+            //set the item value
+
+            dictionary[5] = ("trivandapuram");
+            dictionary[6] = ("noida");
+            dictionary.[7] = ("ahemdabad");
+            dictionary[8] = ("kolkata");
+            Console.WriteLine("Elements of dictionary are:" + check.Key + " " + check.Value);
+            Console.WriteLine("Elements left in dictionary after removed:" + dictionary.Remove("hyderabad"));
+
+            Console.ReadKey();
+        }
+    }
+}
+

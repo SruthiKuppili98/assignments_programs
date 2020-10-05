@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp22
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            
+            Stack<int> MyStack = new Stack<int>();
+            MyStack.Push(2);
+            MyStack.Push(4);
+            MyStack.Push(6);
+            MyStack.Push(8);
+            MyStack.Push(10);
+            MyStack.Push(12);
+            MyStack.Push(14);
+            MyStack.Push(16);
+            MyStack.Push(18);
+            MyStack.Push(20);
+
+            foreach(int stack in MyStack)
+            {
+                Console.WriteLine("Elements of MyStack are:" + stack);
+               
+            }
+            Console.WriteLine("Elements after applying pop:" + MyStack.Pop());
+            Console.WriteLine("Elements after applying pop:" + MyStack.Pop());
+            Console.WriteLine("Elements after applying pop:" + MyStack.Pop());
+            Console.WriteLine("Elements after applying pop:" + MyStack.Pop());
+            Console.WriteLine("Elements after applying pop:" + MyStack.Pop());
+
+
+            Console.WriteLine("Peek elements of MyStack are:" + MyStack.Peek());
+	    Console.WriteLine("Elements present in MyStack are:" + MyStack.Count());
+	    Console.WriteLine(MyStack.Contains("11"));
+            foreach (int stack in MyStack)
+            {
+
+                Console.WriteLine("elements of left data in MyStack after applying pop method is:" + MyStack);
+            }
+            Console.ReadLine();
+        }
+    }
+}

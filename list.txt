@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp24
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("C# Lists");
+
+            var user = new List<string>();
+            user.Add("Attending");
+            user.Add("BTS");
+            user.Add("concert is");
+            user.Add("the best");
+            user.Add("thing in my life");
+            Console.WriteLine("List is creatted");
+            foreach (var list in user)
+            {
+
+                Console.WriteLine("Elements of list are:" + list);
+            }
+            Console.WriteLine("checking for remove method :" + user.Remove("BTS"));
+
+            var mobile = new List<string>() { "jimin", "v", "jk", "jin" };
+            foreach (var docker in mobile)
+            {
+                Console.WriteLine("another way of creating list:" + mobile);
+            }
+
+            Console.WriteLine("the 1st index of the list is:" + mobile[0]);
+            Console.WriteLine("the 2n index of the list is:" + mobile[1]);
+            Console.WriteLine("the 3rd index of the list is:" + mobile[2]);
+            Console.WriteLine("the 4th index of the list is:" + mobile[3]);
+
+            mobile.Insert(4, "suga");
+            Console.WriteLine("the 5th element is expected with Insert method element is:" + mobile[4]);
+
+            Console.WriteLine(mobile.Contains("jk"));
+            Console.WriteLine(mobile.Contains("v"));
+            Console.WriteLine(mobile.Contains("jimin"));
+
+
+
+            Console.ReadKey();
+        }
+    }
+}
+

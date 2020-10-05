@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp25
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Sorted Lists in CSharp Programming");
+            SortedList<int, string> number = new SortedList<int, string>();
+
+            number.Add(10, "TEN");
+            number.Add(1, "ONE");
+            number.Add(2, "TWO");
+            number.Add(4, "NULL");
+
+            foreach(var check in number)
+            {
+                Console.WriteLine("Elements after sortesdlis:" + "Key: {0}, value: {0}", check.Key , check.Value);
+            }
+        }
+    }
+}

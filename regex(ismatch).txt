@@ -1,0 +1,25 @@
+using System;
+using System.Text.RegularExpressions;
+
+
+namespace ConsoleApp30
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string test = "sruthi";
+
+           
+           if (Regex.IsMatch(test,"sr"))
+            {
+                Console.WriteLine("start matches");
+            }
+           if(Regex.IsMatch(test,"hi"))
+            {
+                Console.WriteLine("end matches");
+            }
+            Console.ReadKey();
+
+
+        }

@@ -1,0 +1,18 @@
+using System;
+using System.Text.RegularExpressions;
+
+
+namespace ConsoleApp30
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // replace 2 or more digit pattern with a string.
+            Regex regex = new Regex(@"\d+");
+            string result = regex.Replace("dog 1310 109", "cat");
+            Console.WriteLine("RESULT:{0}", result);
+            Console.ReadKey();
+        }
+    }
+}

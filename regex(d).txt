@@ -1,0 +1,27 @@
+using System;
+using System.Text.RegularExpressions;
+
+namespace ConsoleApp30
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           
+            Regex example = new Regex(@"\d+");
+
+            Match Match = example.Match("sruthi99sruthi");
+             
+            if (Match.Success)
+            {
+                Console.WriteLine("Match the value:" + Match.Value);
+            }
+            Console.ReadKey();
+
+
+        }
+
+
+    
+    }
+}

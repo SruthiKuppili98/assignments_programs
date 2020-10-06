@@ -1,0 +1,27 @@
+using System;
+using System.Text.RegularExpressions;
+
+
+namespace ConsoleApp30
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string input = "/content/alternative-1.aspx";
+          
+            Match match = Regex.Match(input,@"content/([A-Za-z0-9\-]+\.aspx$",RegexOptions.IgnoreCase);
+             
+            if (match.Success)
+            {
+                string key = match.Groups[1].Value;
+            }
+            Console.ReadKey();
+
+
+        }
+
+
+    
+    }
+}

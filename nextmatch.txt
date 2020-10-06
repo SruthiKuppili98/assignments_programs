@@ -1,0 +1,26 @@
+using System;
+using System.Text.RegularExpressions;
+
+
+namespace ConsoleApp30
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string value = "1 AND 3";
+
+            Match match = Regex.Match(value, @"\d");
+           if (match.Success)
+            {
+                Console.WriteLine(match.Value);
+            }
+            match = match.NextMatch();
+           if(match.Success)
+            {
+                Console.WriteLine(match.Value);
+            }
+            Console.ReadKey();
+        }
+    }
+}

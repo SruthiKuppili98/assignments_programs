@@ -1,0 +1,22 @@
+using System;
+using System.Text.RegularExpressions;
+
+
+namespace ConsoleApp30
+{
+    class Program
+    {
+        static void Main()
+        {
+            Match m = Regex.Match("123 sruthi", @"A. *y");
+            if (m.Success)
+                {
+                Console.WriteLine("Value = +m.Value");
+                Console.WriteLine("Length = +m.Length");
+                Console.WriteLine("Index = +m.Index");
+
+            }
+            Console.ReadKey();
+        }
+    }
+}

@@ -1,0 +1,22 @@
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    /// <summary>
+    /// Test string using Regex.IsMatch static method.
+    /// </summary>
+    static bool IsValid(string value)
+    {
+        return Regex.IsMatch(value, @"^[a-zA-Z0-9]*$");
+    }
+
+    static void Main()
+    {
+        // Test the strings with the IsValid method.
+        Console.WriteLine(IsValid("sruthi137"));
+        Console.WriteLine(IsValid("sruthiPerls"));
+        Console.WriteLine(IsValid(":-)"));
+        // Console.WriteLine(IsValid(null)); // Throws an exception
+    }
+}

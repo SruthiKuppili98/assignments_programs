@@ -1,0 +1,40 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+namespace CSharpLinq
+{
+    public class Program
+    {
+        static void Main(string[] args)
+
+        {
+            IList<Student> studentList = new List<Student>()
+            {
+            new Student() { StudentID = 2, StudentName = "Sruthi", Age = 21, BatchID = 1 },
+            new Student() { StudentID = 3, StudentName = "haritha", Age = 22, BatchID = 2 },
+            new Student() { StudentID = 4, StudentName = "aditi", Age = 21, BatchID = 3 },
+            new Student() { StudentID = 5, StudentName = "Sravani", Age = 22, BatchID = 4 },
+        };
+            var StudentName = studentList.Where(s => s.Age > 18).Select(s => s).Where(st => st.BatchID > 1).Select(s => s.StudentName);
+            var StudentName1 = studentList.Where(s => s.Age > 22).Select(s => s).Where(st => st.BatchID > 4).Select(s => s.StudentName);
+            foreach (var name in StudentName)
+            {
+                Console.WriteLine(name);
+            }
+            foreach (var name1 in StudentName1)
+            {
+                Console.WriteLine(name1);
+                Console.ReadKey();
+            }
+        }
+    }
+}
+public class Student
+{
+
+    public int StudentID { get; set; }
+    public string StudentName { get; set; }
+    public int Age { get; set; }
+    public int BatchID { get; set; }
+}

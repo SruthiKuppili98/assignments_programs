@@ -1,0 +1,54 @@
+using System;
+
+namespace CSharpLambda
+{
+    
+    public delegate double Addnums1Delegate1(int x, float y, double z);
+    public delegate void Addnums2Delegate2(int x, float y, double z);
+    public delegate bool CheckLengthDelegate(string str);
+
+    class Program
+    {
+        public static double Addnums1(int x, float y, double z)
+        {
+            return (x + y + z);
+        }
+        public static void Addnums2(int x, float y, double z)
+        {
+            Console.WriteLine(x + y + z);
+        }
+
+        public static bool CheckLength(string name)
+        {
+            //check the string whose length is greater than 4 should print true else false;
+
+            if (name.Length > 4)
+
+                return true;
+            return false;
+        }
+            
+            static void Main(string[] args)
+            {
+
+                Console.WriteLine("Hello World");
+
+            Addnums1Delegate1 obj1 = new Addnums1Delegate1(Addnums1);
+
+            double result = obj1.Invoke(10, 3.142f, 12345.12345678);
+            Console.WriteLine(result);
+
+            Addnums2Delegate2 obj2 = new Addnums2Delegate2(Addnums2);
+            obj2.Invoke(10, 3.142f, 123.12345678);
+
+            CheckLengthDelegate obj3 = new CheckLengthDelegate(CheckLength);
+
+            bool check = obj3.Invoke("SRUTHI");
+            Console.WriteLine(check);
+
+            Console.ReadLine();
+            }
+               
+            
+        }
+    }

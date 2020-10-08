@@ -1,0 +1,42 @@
+using System;
+
+namespace CSharpLambda
+{
+
+    public delegate double Addnums1Delegate1(int x, float y, double z);
+    public delegate void Addnums2Delegate2(int x, float y, double z);
+    public delegate bool CheckLengthDelegate(string str);
+
+    class Program
+    {
+        
+           static void Main(string[] args)
+        {
+
+            Console.WriteLine("Hello World");
+
+            Func<int,float,double,double> obj1 = (x,y,z) => ( x + y +z);
+                    
+   
+            double result = obj1.Invoke(10, 3.142f, 12345.12345678);
+            Console.WriteLine(result);
+
+            Action<int, float, double> obj2 = (x, y, z) => Console.WriteLine(x + y + z);
+           
+           obj2.Invoke(10, 3.142f, 123.12345678);
+
+           Predicate<string> obj3 = (name) =>
+           {
+
+                if (name.Length > 4)
+                    return true;
+                return false;
+           };
+
+            bool check = obj3.Invoke("SRUTHI");
+            Console.WriteLine(check);
+
+            Console.ReadLine();
+           }
+    }
+}

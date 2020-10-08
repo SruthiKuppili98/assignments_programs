@@ -1,0 +1,30 @@
+ausing System;
+
+namespace CSharpAnnonymous
+{
+    public delegate string GreetingsDelegate(string str); //define the delegate  
+    class Programs
+    {
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World");
+
+            //Intatinate the delegate
+
+            GreetingsDelegate obj = delegate ( string name)
+            {
+                return "hello" + name + "very good morning";
+            };
+
+            //method is value returning method
+
+            string str = obj.Invoke("Girls");
+            Console.WriteLine(str);
+
+
+            Console.ReadLine();
+        }         
+        
+    }
+}

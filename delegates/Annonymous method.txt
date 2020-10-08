@@ -1,0 +1,36 @@
+using System;
+
+namespace CSharpAnnonymous
+{
+    public delegate string GreetingsDelegate(string str); //define the delegate 
+    public delegate string GreetingsDelegate1(string str);
+    class Programs
+    {
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World");
+
+            //Intatinate the delegate
+
+            GreetingsDelegate obj = delegate ( string name)
+            {
+                return "hello" + name + "very good morning";
+            };
+
+            GreetingsDelegate1 obj1 = delegate (string name)
+            {
+                return "This is" + name + "Method";
+            };
+            //method is value returning method
+
+            string str = obj.Invoke("Girls");
+            string strr = obj1.Invoke("Annonymous");
+            Console.WriteLine(str);
+
+
+            Console.ReadLine();
+        }
+        
+    }
+}

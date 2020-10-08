@@ -1,0 +1,93 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp35
+{
+    
+    public delegate int MultiplynumsDelegate(int a,int b);
+    public delegate string QuickDelegate(string str);
+    public delegate void Addnums2Delegate(int a, float b, double c);
+    public delegate void GreetingsDelegate(string str);
+    public delegate bool CheckLengthDelegate(String str);
+    class sixmdelegate
+    {
+
+         
+        //Method with return value
+        public static int Multiplynums(int a,  int  b)
+        {
+            return (a * b );
+        }
+
+        public static string Quick(string name)
+        {
+            return "Bangtan" + name;
+        }
+
+
+        //method without return value
+        public static void Addnums1(int a, float b, double c)
+        {
+            Console.WriteLine(a + b + c);
+        }
+        //method without return value
+        public static void Greetings(string Greet)
+        {
+            Console.WriteLine(Greet + " " + "Welcome to!!!!!!");
+        }
+
+
+        public static bool CheckLength(string name)
+        {
+            //check the string whose length is greater than 4 should print true else false;
+            if (name.Length > 4)
+                return true;
+            return false;
+        }
+        public static bool value(string name1)
+        {
+            //check the string whose length is greater than 4 should print true else false;
+            if (name1.Length < 10)
+                return true;
+            return false;
+        }
+        static void Main(string[] args)
+        {
+
+            
+
+            MultiplynumsDelegate obj = new MultiplynumsDelegate(Multiplynums);
+            double result1 = obj.Invoke(10, 13);//New variable to store the value -return type
+            Console.WriteLine(result1);
+            QuickDelegate p = new QuickDelegate(Quick);
+            string name = p.Invoke("Jimin");
+            Console.WriteLine(name);
+
+           Addnums1Delegate obj1 = new Addnums1Delegate(Addnums1);
+            obj1.Invoke(10, 3.142f, 123456.7809738);//Non return type
+
+            GreetingsDelegate G = new GreetingsDelegate(Greet);
+            G.Invoke("Bangtan World");
+
+
+            CheckLengthDelegate obj2 = new CheckLengthDelegate(CheckLength);//New variable to store the value -return type
+
+            bool check = obj2.Invoke("Park");
+            Console.WriteLine(check);
+
+            CheckLengthDelegate o = new CheckLengthDelegate(value);//New variable to store the value -return type
+
+            bool ch = o.Invoke("Sruthi");
+            Console.WriteLine(ch);
+
+
+            Console.ReadLine();
+
+
+
+        }
+    }
+}

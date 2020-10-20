@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style type="text/css">
+        #hid2 {
+            margin-top: 70px;
+            text-align: center;
+            color: mediumpurple;
+        }
+
+        body {
+            font-family: 'Times New Roman',sans-sarif;
+        }
+
+        #after_submit {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        function check() {
+            var question1 = document.quiz.question1.value;
+            var question2 = document.quiz.question2.value;
+            var question3 = document.quiz.question3.value;
+            var question4 = document.quiz.question4.value;
+            var correct = 0;
+
+            if (question1 == "a") {
+                correct = correct + 1;
+            }
+
+            if (question2 == "a") {
+                correct = correct + 1;
+            }
+            if (question3 == "a") {
+                correct = correct + 1;
+            }
+            if (question4 == "a") {
+                correct = correct + 1;
+            }
+
+            var messages = ["Poor","Good","Execellent"];
+            var score;
+            if (correct < 0 && correct > 1) {
+                score = 1;
+            }
+            if (correct > 2) {
+                score = 2;
+            }
+            if (correct < 3 && correct > 4) {
+                score = 4;
+            }
+            
+            document.getElementById("after_submit").style.visibility = "visible";
+            document.getElementById("message").innerHTML = messages[score];
+            document.getElementById("number_correct").innerHTML = "you got" + correct + " correct.";
+        }
+
+
+
+    </script>
+
+
+    <h1 id="hid2">Quiz !!!</h1>
+    <form id="quiz" name="quiz">
+        <p>BTS stands for</p>
+        a): <input type="radio" id="nc" name="question1" value="a">Bangtan Sonyeondan<br>
+        b): <input type="radio" id="nc" name="question1" value="b">Bulletproof boys<br>
+
+
+        <p>Park Jimin mike color</p>
+        a): <input type="radio" id="nc" name="question2" value="a">Gold<br>
+        b): <input type="radio" id="nc" name="question2" value="b">Purple<br>
+
+        <p>V full name</p>
+        a):<input type="radio" id="nc" name="question3" value="a">Kim seok Jin<br>
+        b):<input type="radio" id="nc" name="question3" value="b">Kim Taehyung<br>
+
+        <p>Rap Monster name</p>
+        a):<input type="radio" id="nc" name="question4" value="a">Kim Namjoon<br>
+        b):<input type="radio" id="nc" name="question4" value="b">Min Yoongi<br>
+        <input id="button" type="button" value="I am finished" onclick="check();" />
+
+    </form>
+    <div id="after_submit">
+        <p id="message"></p>
+        <p id="number_correct"></p>
+    </div>
+    </body>
+</html>

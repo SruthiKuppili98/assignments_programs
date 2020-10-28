@@ -13,15 +13,15 @@ namespace WebApplication4
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Establish the database connection
+           
             using (SqlConnection Connect = new SqlConnection("data source=. ; database = Asp.net;integrated security=SSPI"))
             {
-              SqlDataAdapter SDA = new SqlDataAdapter("Select * from employee",Connect); //To retrieve the data from the database-student created
+              SqlDataAdapter SDA = new SqlDataAdapter("Select * from employee",Connect); 
                 SqlDataAdapter SDA1 = new SqlDataAdapter("Select * from student", Connect);
                 SqlDataAdapter SDA2 = new SqlDataAdapter("Select * from IndianCricketTeam", Connect);
                 SqlDataAdapter SDA3 = new SqlDataAdapter("Select * from BanKTable", Connect);
                 SqlDataAdapter SDA4 = new SqlDataAdapter("Select * from IndianRailwaySystem", Connect);
-                DataSet ds = new DataSet();//To convert the data into the grid.
+                DataSet ds = new DataSet();
 
                 SDA.Fill(ds);
                 SDA1.Fill(ds);

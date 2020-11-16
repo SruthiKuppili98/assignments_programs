@@ -1,0 +1,29 @@
+ @model List<MVCcrud.Context.StudentTable>
+@{
+    ViewBag.Title = "StudenList";
+}
+
+<h2>StudenList</h2>
+
+<table class="table table-hover">
+    <tr>
+        <th> Name </th>
+        <th> Email </th>
+        <th> City </th>
+    </tr>
+
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Email</td>
+            <td>@item.City</td>
+            <td>
+                <a href="#" class="btn btn-success">Edit</a>
+                <a href="@Url.Action("Delete",new { item.Id })" class="btn btn-success">Delete</a>
+
+            </td>
+        </tr>
+    }
+</table>
+

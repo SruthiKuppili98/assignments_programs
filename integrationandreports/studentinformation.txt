@@ -1,0 +1,6 @@
+StudentId, StudentName, Marks, Gender
+101,Sruthi,80,Female
+102,Haritha,70,Female
+103,Aditi,85,Female
+104,Kavya,89,Female
+105,sravani,90,Female

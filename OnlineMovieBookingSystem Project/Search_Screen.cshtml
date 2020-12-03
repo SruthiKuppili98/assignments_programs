@@ -1,0 +1,113 @@
+@model Onlinemoviesystem.Models.theatre_class
+
+@{
+    ViewBag.Title = "Search_Screen";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Theatre_ID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Theatre_ID, new List<SelectListItem>
+              {
+              new SelectListItem{Text="10523", Value="10523"},
+              new SelectListItem{Text="10578", Value="10578"},
+              new SelectListItem{Text="10596", Value="10596"},
+              new SelectListItem{Text="10544", Value="10544"} },
+                 "Please select")
+                @Html.ValidationMessageFor(model => model.Theatre_ID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Theatre_Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Theatre_Name, new List<SelectListItem>
+                             { new SelectListItem{Text="C.M.R Central", Value="C.M.R CENTRAL"},
+                               new SelectListItem{Text="varun", Value="varun"},
+                               new SelectListItem{Text="CinePolis", Value="CinePolis"},
+                               new SelectListItem{Text="Sangam Cinemas", Value="Sangam Cinemas"} },
+                                 "Please select")
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Theatre_City, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Theatre_City, new List<SelectListItem>
+              { new SelectListItem{Text="Vizag", Value="Vizag"},
+                new SelectListItem{Text="Hyderabad", Value="Hyderabad"},
+                new SelectListItem{Text="Bengaluru", Value="Bengaluru"},
+                new SelectListItem{Text="Pune", Value="Pune"},
+                new SelectListItem{Text="Mumbai", Value="Mumbai"},
+                new SelectListItem{Text="Chennai", Value="Chennai"} },
+                  "Please select")
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Movie, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Movie, new List<SelectListItem>
+                { new SelectListItem{Text="Break The Silence", Value="Break The Silence"},
+                  new SelectListItem{Text="Bahubali", Value="Bahubali"},
+                  new SelectListItem{Text="Dil Bechare", Value="Dil Bechare"},
+                  new SelectListItem{Text="K.G.F", Value="K.G.F"},
+                  new SelectListItem{Text="Orange", Value="Orange"},
+                  new SelectListItem{Text="Daddy", Value="Daddy"} },
+                    "Please select")
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.List_Of_Screens, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.List_Of_Screens, new List<SelectListItem>
+               { new SelectListItem{Text="Screen A", Value="Screen A"},
+                 new SelectListItem{Text="Screen A1", Value="Screen A1"},
+                 new SelectListItem{Text="Screen A2", Value="Screen A2"},
+                 new SelectListItem{Text="Screen B", Value="Screen B"} },
+                   "Please select")
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Manager_Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Manager_Name, new List<SelectListItem>
+                       { new SelectListItem{Text="Pavan", Value="Pavan"},
+                         new SelectListItem{Text="Haritha", Value="Haritha"},
+                         new SelectListItem{Text="Aditya", Value="Aditya"},
+                         new SelectListItem{Text="Aditi", Value="Aditi"} },
+                         "Please select")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Search" class="btn btn-default" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <label style="color:darksalmon">ViewBag.Message1</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <label style="color:firebrick">ViewBag.Notification</label>
+            </div>
+        </div>
+
+    </div>
+}

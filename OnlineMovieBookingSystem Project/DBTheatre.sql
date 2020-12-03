@@ -1,0 +1,7 @@
+SELECT TOP (1000) [Theatre ID]
+      ,[Theatre Name]
+      ,[Theatre City]
+      ,[Movie]
+      ,[List Of Screens]
+      ,[Manager Name]
+  FROM [online movie theatre].[dbo].[theatre class]
